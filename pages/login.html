@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGuard - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <link rel="stylesheet" href="../src/css/auth.css">
+    <!-- Firebase SDK -->
+    <script type="module">
+    // Import the Firebase SDKs
+    import "https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js";
+    import "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js";
+    import "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js";
+    </script>
+    <script type="module" src="../src/firebase/firebase-config.js?v=1"></script>
+    <script type="module" src="../src/js/auth.js"></script>
+</head>
+<body class="bg-[var(--bg-color)] text-[var(--text-main)] font-poppins flex min-h-screen">
+    <div class="flex-1 flex items-center justify-center p-4 order-1">
+        <div class="auth-container fade-in glassmorphism backdrop-filter backdrop-blur-md bg-opacity-40">
+            <!-- Logo with SVG shield -->
+            <div class="text-center">
+                <svg class="mx-auto h-12 w-12 text-[var(--primary-accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-3.5-2.5-6-6-6S0 7.5 0 11s2.5 6 6 6 6-2.5 6-6zm0 0c0 3.5 2.5 6 6 6s6-2.5 6-6-2.5-6-6-6-6 2.5-6 6z" />
+                </svg>
+                <h2 class="mt-6 text-3xl font-bold holographic-text">DocGuard</h2>
+                <p class="mt-2 text-sm text-[var(--text-muted)]">Secure Your Documents</p>
+            </div>
+            <form id="loginForm" class="mt-8 space-y-6">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label for="email" class="sr-only">Email address</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required class="auth-input rounded-t-md bg-glass-light border-glass-border text-[var(--text-main)] placeholder-[var(--text-muted)] focus:ring-[var(--primary-accent)] focus:border-[var(--primary-accent)]" placeholder="Email address">
+                    </div>
+                    <div>
+                        <label for="password" class="sr-only">Password</label>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required class="auth-input rounded-b-md bg-glass-light border-glass-border text-[var(--text-main)] placeholder-[var(--text-muted)] focus:ring-[var(--primary-accent)] focus:border-[var(--primary-accent)]" placeholder="Password">
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="text-sm text-[var(--text-muted)]">
+                        <a href="forgot-password.html" class="auth-link text-[var(--primary-accent)] hover:text-[var(--secondary-accent)]">Forgot your password?</a>
+                    </div>
+                </div>
+                <div id="messageBox" class="mb-4 text-center text-red-600 font-semibold"></div>
+                <div>
+                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-[var(--bg-color)] bg-[var(--primary-accent)] neon-glow-button hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-accent)]">
+                        Sign in
+                    </button>
+                </div>
+                <div class="text-sm text-center text-[var(--text-muted)]">
+                    <a href="register.html" class="auth-link text-[var(--primary-accent)] hover:text-[var(--secondary-accent)]">Don't have an account? Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="flex-1 flex items-center justify-center p-4 order-2">
+        <dotlottie-wc src="https://lottie.host/eea6b4b1-8037-4491-beee-179f0f0f9575/5gBnOZt7Hq.lottie" style="width: 700px;height: 700px" speed="1" autoplay loop></dotlottie-wc>
+    </div>
+    <script type="module" src="../src/js/login.js"></script>
+</body>
+</html>

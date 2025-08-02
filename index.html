@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DocGuard - Home</title>
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <link rel="stylesheet" href="src/css/auth.css" />
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: var(--font-poppins, 'Poppins', sans-serif);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            min-height: 100vh;
+        }
+        .main-wrapper {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .main-image {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 1rem auto 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+        }
+    </style>
+</head>
+<body>
+<dotlottie-wc
+    src="https://lottie.host/2f0121f3-9338-4584-a146-7494398cb0d0/HCjizkq86W.lottie"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--bg-color); z-index: 9999;"
+    id="splashAnimation"
+    speed="1"
+    autoplay
+    loop
+></dotlottie-wc>
+
+<div class="main-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">DocGuard</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="pages/pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="pages/login.html" class="btn btn-primary">Sign In</a></li>
+                <li><a href="pages/register.html" class="btn btn-outline">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <h1 class="main-title">Keep your files safe and private</h1>
+            <p class="main-description">
+                With DocGuard Drive's end-to-end encrypted cloud storage, no one but you and the people you choose can access your files — not even DocGuard.
+            </p>
+            <div class="action-buttons">
+                <a href="pages/register.html" class="btn btn-primary btn-large">Create a free account</a>
+                <a href="pages/pricing.html" class="btn btn-outline btn-large">Compare plans</a>
+            </div>
+
+            <!-- About Section -->
+            <section id="about" class="section about-section" data-aos="fade-up">
+                <h2><i class="bx bx-shield-quarter"></i> About DocGuard</h2>
+                <p>DocGuard is a cybersecurity platform dedicated to protecting your sensitive documents with advanced encryption and secure access controls. It uses firewall technology and securely stores all types of data including code repositories like GitHub, documents, files, images, and essentially all data in the world.</p>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="section features-section" data-aos="fade-left">
+                <h2>Features</h2>
+                <ul>
+                    <li><i class="bx bx-lock"></i> End-to-end encryption for all documents</li>
+                    <li><i class="bx bx-shield"></i> Multi-factor authentication for secure access</li>
+                    <li><i class="bx bx-bell"></i> Real-time monitoring and alerts</li>
+                    <li><i class="bx bx-share-alt"></i> Easy document sharing with permissions</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const splashAnimation = document.getElementById('splashAnimation');
+        const hasVisited = sessionStorage.getItem('hasVisited');
+
+        if (splashAnimation && !hasVisited) {
+            setTimeout(() => {
+                splashAnimation.style.display = 'none';
+                sessionStorage.setItem('hasVisited', 'true');
+            }, 7000);
+        } else if (splashAnimation) {
+            splashAnimation.style.display = 'none';
+        }
+    });
+    fetch("src/components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Footer load error:", error));
+    </script>
+    <!-- AOS Animation Script -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+...
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
+</create_file>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DocGuard - Pricing</title>
+    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/auth.css" />
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: var(--font-poppins, 'Poppins', sans-serif);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            min-height: 100vh;
+        }
+        .main-wrapper {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">DocGuard</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">About</a></li>
+                <li><a href="../index.html#features" class="nav-link">Features</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="btn btn-primary">Sign In</a></li>
+                <li><a href="register.html" class="btn btn-outline">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <h1>Pricing Plans</h1>
+            <p>Choose the plan that best fits your needs.</p>
+            <ul>
+                <li><strong>Basic:</strong> Free - Basic document protection features.</li>
+                <li><strong>Pro:</strong> $9.99/month - Advanced encryption and sharing options.</li>
+                <li><strong>Enterprise:</strong> Contact us for custom pricing and features.</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch("../src/components/footer.html")
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Footer load error:", error));
+    </script>
+
+</div>
+</body>
+</html>

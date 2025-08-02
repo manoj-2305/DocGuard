@@ -1,0 +1,23 @@
+{
+  "name": "docguard",
+  "version": "1.0.0",
+  "description": "DocGuard - Cybersecurity Firewall Software",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build:css": "tailwindcss build src/css/styles.css -o dist/css/styles.css",
+    "watch:css": "tailwindcss build src/css/styles.css -o dist/css/styles.css --watch"
+  },
+  "keywords": [
+    "cybersecurity",
+    "firewall",
+    "web",
+    "frontend",
+    "firebase"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
